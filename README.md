@@ -13,3 +13,19 @@ This is the link for markdown text on github. [link](https://github.com/github/d
 
 ## Gitpod command(before, init)
 - Issue with the init is that it will nor rerun if we restart our environment.
+
+## define the env varibales
+
+- To define the env varibale we could use the export command in terminal
+`` export aws=somthing``
+- Tog get the value of the varibale
+`` echo $aws ``
+- To define the variable inside a script
+`` aws=something``
+- To get the value of a variable inside a script
+`` $aws ``
+
+## To set and persist env inside gitpod
+`` gp env aws=something``
+
+

@@ -29,3 +29,14 @@ This is the link for markdown text on github. [link](https://github.com/github/d
 `` gp env aws=something``
 
 
+### aws cli installion
+- AWS cli is already installed
+- We need to set specific env for that
+- The script to install exist inside the **insall_aws_cli** folder via the bash script.
+
+
+### To check if our aws credentials are configured correctly
+``aws sts get-caller-identity``
+
+#### Set aws env variables
+[link](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)

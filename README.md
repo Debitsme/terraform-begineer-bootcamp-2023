@@ -1,4 +1,5 @@
 # Terraform Beginner Bootcamp 2023
+- The code repo for the below project is [main source code](https://github.com/omenking/terraform-beginner-bootcamp-2023/tree/main)
 ## Semantic versioning  :mage:
 
 I am doing this for fun and there are no catches here.
@@ -54,3 +55,18 @@ This is the link for markdown text on github. [link](https://github.com/github/d
 
 ### terraform providers
 - They are kind of middle man to make an api call to the infrastructure provider that we wanted to build.
+
+### For remote backend we could use either S3 or terraform cloud
+- There is an issue we face while authenticating to terraform cloud
+- To avoid that we need to create a script and I have created a script with the name of **generate_tfrc_credentials**.
+- The path where the script should exist is: 
+`` touch /home/gitpod/.terraform.d/credentials.tfrc.json ``
+- The following code block should exist inside the file 
+`` {
+  "credentials": {
+    "app.terraform.io": {
+      "token": "YOUR-TERRAFORM-CLOUD-TOKEN"
+    }
+  }
+} ``
+

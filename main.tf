@@ -1,5 +1,14 @@
 #To generate a random name
 terraform {
+
+  #  cloud {
+  #   organization = "hamzaali"
+
+  #   workspaces {
+  #     name = "terraform-beginner-bootcamp_2023"
+  #   }
+  # }
+
   required_providers {
     random = {
       source  = "hashicorp/random"
@@ -8,9 +17,10 @@ terraform {
 
     aws = {
       source  = "hashicorp/aws"
-      version = "5.17.0"
+      version = "5.16.2"
     }
   }
+  
 }
 
 provider "random" {
@@ -20,6 +30,8 @@ provider "random" {
 provider "aws" {
   # Configuration options
 }
+
+
 
 resource "random_string" "bucket_name" {
   length  = 16
@@ -33,10 +45,7 @@ output "My_bucket_name" {
   value = random_string.bucket_name.result
 }
 
-
-
-
-resource "aws_s3_bucket" "example" {
+resource "aws_s3_bucket" "bucket_1" {
   bucket = random_string.bucket_name.result
 
   tags = {

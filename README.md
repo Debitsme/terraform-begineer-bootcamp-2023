@@ -40,3 +40,17 @@ This is the link for markdown text on github. [link](https://github.com/github/d
 
 #### Set aws env variables
 [link](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
+
+### Random provider
+- Most of the time we need to make bucket in s3 and for that we require a unique and we can use **terraform random provider** to generate a name.
+- [random provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string)
+
+### Terraform commands
+- To initate the directory of the terraform --> **terraform init**
+- To confirm the terraform syntac --> **terraform validate** --> it will also run when we use terraform apply 
+- To apply the changes ---> **terraform apply**
+- To destroy the created resources --> **terraform destroy**
+- To confirm which resources will be created without creating them --> **terraform plan**
+
+### terraform providers
+- They are kind of middle man to make an api call to the infrastructure provider that we wanted to build.

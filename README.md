@@ -70,3 +70,5 @@ This is the link for markdown text on github. [link](https://github.com/github/d
   }
 } ``
 
+### alert
+- We must define our aws access key, secret keys and aws region inside terraform cloud.

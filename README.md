@@ -72,3 +72,8 @@ This is the link for markdown text on github. [link](https://github.com/github/d
 
 ### alert
 - We must define our aws access key, secret keys and aws region inside terraform cloud.
+
+### Terraform import
+- If somehow we lost the tf state file we can recover the file from **terraform import** commnad.
+`` terraform import aws_s3_bucket.bucket_1 bucket _name/resource name ``
+- We stop using terraform random provdier as it was causing us some issues.

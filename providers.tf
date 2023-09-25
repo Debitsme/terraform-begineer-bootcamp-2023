@@ -1,19 +1,19 @@
 #To generate a random name
 terraform {
 
-   cloud {
-    organization = "hamzaali"
+  #  cloud {
+  #   organization = "hamzaali"
 
-    workspaces {
-      name = "terraform-beginner-bootcamp_2023"
-    }
-  }
+  #   workspaces {
+  #     name = "terraform-beginner-bootcamp_2023"
+  #   }
+  # }
 
   required_providers {
-    random = {
-      source  = "hashicorp/random"
-      version = "3.5.1"
-    }
+    # random = {
+    #   source  = "hashicorp/random"
+    #   version = "3.5.1"
+    # }
 
     aws = {
       source  = "hashicorp/aws"

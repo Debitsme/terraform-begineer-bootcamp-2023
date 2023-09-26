@@ -77,3 +77,24 @@ This is the link for markdown text on github. [link](https://github.com/github/d
 - If somehow we lost the tf state file we can recover the file from **terraform import** commnad.
 `` terraform import aws_s3_bucket.bucket_1 bucket _name/resource name ``
 - We stop using terraform random provdier as it was causing us some issues.
+
+## How we can reference what we have defined inside the modules in tf
+### variables
+- We need to define the variables inside the modules files and also in the root directory so that the modules block in the root folder can reference the varibales.
+- Also we can make use of the tfvars file or just define these values directly inside the module block
+``module "terrahouse" {
+  source = "./modules/terrahouse_aws"
+   bucket_name=var.bucket_name
+   UUID=var.UUID
+  
+}``
+
+## How do we get stuff into the module and how do we get out of modules.
+### outputs
+- We also need to define the output inside the modules directory and also inside the root directory of the tf project and we can referecne them through this:
+`` output "My_bucket_name" {
+  value = aws_s3_bucket.bucket_1.bucket
+}``
+
+## Fix using terraform refresh
+ - terraform apply -refresh-only

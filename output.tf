@@ -1,3 +1,4 @@
 output "My_bucket_name" {
-  value = aws_s3_bucket.bucket_1.bucket
+  description = "for getting outputs from inside the modules"
+  value = module.terrahouse.My_bucket_name
 }

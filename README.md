@@ -98,3 +98,35 @@ This is the link for markdown text on github. [link](https://github.com/github/d
 
 ## Fix using terraform refresh
  - terraform apply -refresh-only
+
+### Modules Sources
+- Using the source we can import the module from various places eg:
+
+  locally 
+  Github
+  Terraform Registry
+
+## Working with Files in Terraform
+- Fileexists function
+- This is a built in terraform function to check the existance of a file.
+
+``condition = fileexists(var.error_html_filepath)``
+[URL](https://developer.hashicorp.com/terraform/language/functions/fileexists)
+- filemd link
+[Filemd5](https://developer.hashicorp.com/terraform/language/functions/filemd5)
+
+## Path Variable (important)
+- TF provide with a cli command **terraform console** to debug different issue. We will use this to take advantage of the following below commands
+- In terraform there is a special variable called path that allows us to reference local paths:
+``path.module = get the path for the current module
+path.root = get the path for the root module Special Path Variable``
+
+### How to get the URL of an object from s3 bucket
+-  For this we will use endpoint variable from the s3 bucket block in tf
+
+## Need for the etag
+- The issue here is that tfstate check the resource and not the data so if we will change the data inside the index.htl and rerun it. Nothings will be changed.
+- For this purpose we will use etags
+  ``source = "${path.root}/public/error.html"``
+- its a function that will create a hash based on the content of the file
+  ``etag = filemd5("${path.root}/public/error.html")``

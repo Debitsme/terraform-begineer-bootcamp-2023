@@ -130,3 +130,21 @@ path.root = get the path for the root module Special Path Variable``
   ``source = "${path.root}/public/error.html"``
 - its a function that will create a hash based on the content of the file
   ``etag = filemd5("${path.root}/public/error.html")``
+
+### Terraform Data Sources
+- In simple this allows us to source data from cloud resources.
+- Data sources allow Terraform to use information defined outside of Terraform, defined by another separate Terraform configuration, or modified by functions.
+- [URL](https://developer.hashicorp.com/terraform/language/data-sources)
+- Example (# For the S3_policy we use, we need a distribution and an account id. Account ID has been taken care of by the data block as we are already familiar with aws sts get-caller-identity. the distribution id will be taken from the cloud_front distribution block)
+- It has a data block in the main.tf and its reference to resource_storage.tf.
+
+### Terraform locals
+
+### ISSUE_Declaring content type for a file.
+- Our code do create a distribution but when we hit the distribution domain name instead of 
+- showing us a page we download the file bcz it doesn't know the content of the files.
+
+### Invalidation for cloud_front
+- To apply the above changes we need to clear cache in the AWS_CDN.
+- Validation --> /*
+

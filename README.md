@@ -179,3 +179,22 @@ resource "terraform_data" "content_version" {
 }
 ```
 - For knowledge  ---> Before that we were using **null_data**
+- Also it doesn't require us to download a provider.
+
+### Heredoc
+- Most programming language have this concept and it allow us to run a multi line command in chunk
+- [URL](https://developer.hashicorp.com/terraform/language/expressions/strings)
+```
+command = <<COMMAND
+aws cloudfront create-invalidation \
+--distribution-id ${aws_cloudfront_distribution.s3_distribution.id} \
+--paths '/*'
+    COMMAND```
+
+### Provisioners
+- They allow us to execute commmands on instances. Terraform don't recommned us to do that as ansible like tools are best fit for them.
+- **local-exec** vs **remote-exec** vs **file-exec**
+- local will execute command on the machine running your terraform and where you use the commands like terraform plan.
+- Remote will execute commnad to other machines where you would like to do ssh.
+- File will copy the files and directories from your machine to other machines.
+

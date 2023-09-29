@@ -31,6 +31,14 @@ resource "aws_s3_object" "index_html" {
   content_type = "text/html"
   #its a function that will create a hash based on the content of the file
   etag = filemd5("${path.root}/public/index.html")
+
+  # replace_triggered_by is attached with content_version and when this will change it will trigger a replacement of the resources instead of the etag.
+  # instead of making any changed to the content of index.html what we need to do now is to change the content_verision to trigger the replacement.
+  lifecycle {
+    ignore_changes = [etag]
+    replace_triggered_by = [terraform_data.content_version.output]
+
+  }
 }
 
 #block to upload the error.html file
@@ -72,6 +80,6 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
 # the data block as we are already familiar with aws sts get-caller-identity. 
 # the distribution id will be taken from the cloud_front distribution block
 
-# resource "terraform_data" "content_version" {
-#   input = var.content_version
-# }
+resource "terraform_data" "content_version" {
+  input = var.content_version
+}

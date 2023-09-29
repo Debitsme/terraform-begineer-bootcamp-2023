@@ -154,3 +154,28 @@ path.root = get the path for the root module Special Path Variable``
 - We use the jsonencode to define our bucket policy that is inline with hcl format.
 
 ### How to retain cloud front distribution
+
+
+### Controling the lifecycle of our resources.
+[URL](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle)
+- It allows us to control when a resource is created or updated.
+- Mostly when we make any changes inside our html file a version gets attachted to it as we have defined an etag
+- What we can do is define a block inside the s3 object like this
+``` 
+lifecycle {
+    ignore_changes = [etag]
+  }
+```
+
+### reource data block in terraform 
+- [URL](https://developer.hashicorp.com/terraform/language/resources/terraform-data)
+- The **terraform_data** block is used to create a custom data source within Terraform. This allows you to retrieve and use data from within your configuration
+- This data source can then be referenced in other parts of the configuration.
+- **data** block in terraform allows us to fetch data from external providers while **terraform_data** allows you to define your own custom data sources within your configuration.
+- We have defined content-version and it will only make a change when we change its value instead of the etag as define in the lifecycle block.
+```
+resource "terraform_data" "content_version" {
+  input = var.content_version
+}
+```
+- For knowledge  ---> Before that we were using **null_data**

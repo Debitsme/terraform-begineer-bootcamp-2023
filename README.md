@@ -1,5 +1,7 @@
 # Terraform Beginner Bootcamp 2023
 - The code repo for the below project is [main source code](https://github.com/omenking/terraform-beginner-bootcamp-2023/tree/main)
+## Project visualization
+![Terratown](https://github.com/Debitsme/terraform-beginner-bootcamp-2023/assets/97181494/464299d5-b848-4091-91a2-3e09ea1414cd)
 ## Semantic versioning  :mage:
 
 I am doing this for fun and there are no catches here.

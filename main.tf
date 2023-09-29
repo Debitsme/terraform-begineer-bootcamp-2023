@@ -39,5 +39,6 @@ module "terrahouse" {
   source      = "./modules/terrahouse_aws"
   bucket_name = var.bucket_name
   UUID        = var.UUID
+  content_version= var.content_version
 
 }

@@ -7,3 +7,8 @@ variable "bucket_name" {
   type        = string
   description = "Our S3 bucket name."
 }
+
+
+variable "content_version" {
+  type        = number
+}

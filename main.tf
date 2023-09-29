@@ -15,9 +15,9 @@ terraform {
   #   #   version = "3.5.1"
   #   # }
 
-    
+
   # }
-  
+
 }
 
 # provider "random" {
@@ -36,8 +36,8 @@ terraform {
 # }
 
 module "terrahouse" {
-  source = "./modules/terrahouse_aws"
-   bucket_name=var.bucket_name
-   UUID=var.UUID
-  
+  source      = "./modules/terrahouse_aws"
+  bucket_name = var.bucket_name
+  UUID        = var.UUID
+
 }

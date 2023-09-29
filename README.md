@@ -139,7 +139,7 @@ path.root = get the path for the root module Special Path Variable``
 - It has a data block in the main.tf and its reference to resource_storage.tf.
 
 ### Terraform locals
-
+- Allow us to define local varibles which is very useful when we want to define data in some other format.
 ### ISSUE_Declaring content type for a file.
 - Our code do create a distribution but when we hit the distribution domain name instead of 
 - showing us a page we download the file bcz it doesn't know the content of the files.
@@ -148,3 +148,7 @@ path.root = get the path for the root module Special Path Variable``
 - To apply the above changes we need to clear cache in the AWS_CDN.
 - Validation --> /*
 
+### jsonencode
+- We use the jsonencode to define our bucket policy that is inline with hcl format.
+
+### How to retain cloud front distribution

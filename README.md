@@ -198,3 +198,18 @@ aws cloudfront create-invalidation \
 - Remote will execute commnad to other machines where you would like to do ssh.
 - File will copy the files and directories from your machine to other machines.
 
+### uploading multiple files
+- Earlier in the porject we have single files and now we will shift towards uplaoding multiple files(pictures).
+- We will do that usign **iteration**.
+- 
+
+#### Terraform for_each and other function
+- [URL](https://developer.hashicorp.com/terraform/language/meta-arguments/for_each)
+- [function](https://developer.hashicorp.com/terraform/language/functions/file)
+- We face the challenge of uploading different types of images to s3 so we are using for_each to iterate over alot of things.
+- We added a new resource block to uplaod picture and we discover diferent types of pictures from the command below. To find the pictures.
+- ```fileset("${path.root}/public/assets","*.{jpg,jpeg}")```
+- It(file/fileset) comes under the DSA of the terraform and above define is a list. It will return a key. If its a map/object then it will be returning a value.
+- ```${each.key} and each.value```
+
+

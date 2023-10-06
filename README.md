@@ -212,4 +212,5 @@ aws cloudfront create-invalidation \
 - It(file/fileset) comes under the DSA of the terraform and above define is a list. It will return a key. If its a map/object then it will be returning a value.
 - ```${each.key} and each.value```
 
-
+### Clone the new terratown git code
+- As our terraform bootcamp code is already cloned from a repo so to if we clone another repo into this repo it becomes a sub-module which sometimes becomes a headache. To avoid that we need to delete the .git file that comes with cloning a code which is used to track changes in a git repo.
